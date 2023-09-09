@@ -73,7 +73,6 @@ let test = int2str(-2);;
 
 String.init 5 (fun index -> Char.chr (index + 65))
 
-
 let chr = Char.chr //needs ascii (int), returns char
 0 - 9
 48 - 57
