@@ -22,6 +22,7 @@ if input >= 10, needs to cut down to single digits
 need a counter to figure out how large the string is going to be
 needs to loop int2chr for each index starting from 0 meaning the first call should do the 'largest place'   
 *)
+#use "assign0.ml";;
 
 let rec
 int2chr (i0 : int) : char =
@@ -30,7 +31,7 @@ int2chr (i0 : int) : char =
     let i0 = i0/10 in (* gets rid of ones place *)
     int2chr(i0) else (* runs with the tens as the new ones place *)
   let i0 = i0 + 48 in (*i0 now contains ascii*)
-  let chr = Char.chr in (*chr now contains char*)
+  (*let chr = Char.chr in*) (*chr now contains char*)
   chr i0
 ;;
 
@@ -50,7 +51,7 @@ let length = 0 in
 let rec
 int2str (i0 : int) : string =
 let length = size(i0) in
-String.init length (fun index -> int2chr(i0 mod (exp 10 (length-index))))
+string_init length (fun index -> int2chr(i0 mod (exp 10 (length-index))))
 ;;
 
 (*
@@ -63,7 +64,6 @@ String.init length (fun index -> int2chr(i0 mod (exp 10 (length-index))))
   let c0 = chr i0 in
   String.make 1 c0
   *)
-
 
 let test = int2str(-2);;
 
